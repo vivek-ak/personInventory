@@ -1,0 +1,57 @@
+<mat-sidenav-container *ngIf="selectedPerson != null" class="tp-container" autosize>
+  <mat-sidenav #sidenav mode="side" opened class="side-view">
+    <mat-button-toggle-group style="margin: 50px 10px 10px 180px">
+      <mat-button-toggle [value]="false" [checked]="true" (click)="sortDataInAsc()"><img src="./assets/115-512.png"
+                                                                                         class="image-view">
+      </mat-button-toggle>
+      <mat-button-toggle [value]="true" (click)="sortDataInDec()"><img src="./assets/ztoa.png" class="image-view">
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <div *ngFor="let person of sortedPersonData">
+      <button mat-button class="person-button-view"
+              [ngStyle]="selectedPerson.name==person.name ? {'background-color':'#019adc', 'color': 'white'} : {}"
+              (click)="personSelected(person)"> {{person.name}} </button>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content style="overflow: visible">
+    <div>
+      <tr>
+        <td><img src="./assets/{{selectedPerson.profileImage}}"
+                 style="margin: 20px 20px 20px 20px;height: 180px;"></td>
+        <td style="vertical-align: middle;padding-left: 20px"><h1> {{selectedPerson.name}} </h1> <br>
+          {{selectedPerson.workExperience[0].title}} <br>
+          {{selectedPerson.phone}}  <br>
+          <a href="{{selectedPerson.email}}"> {{selectedPerson.email}} </a>
+        </td>
+      </tr>
+    </div>
+    <tr>
+      <td><h1 class="content-heading"> Education </h1></td>
+      <br></tr>
+    <tr>
+      <div *ngFor="let edu of selectedPerson.education" class="content-view-details">
+            <span class="content-view"> <b> {{edu.startYear}}
+              - {{edu.endYear}} </b> </span>
+        <span style="padding-left: 30px"> {{edu.institution}} </span> <br>
+        <span style="padding-left: 158px"> {{edu.degree}}</span>
+      </div>
+    </tr>
+    <tr>
+      <td><h1 class="content-heading"> Experience </h1></td>
+      <br>
+    </tr>
+    <tr>
+      <div *ngFor="let exp of selectedPerson.workExperience" class="content-view-details">
+        <span class="content-view"> <b>{{exp.startYear}}
+          - {{exp.endYear != null ? exp.endYear : "Present"}} </b>  </span>
+        <span style="padding-left: 30px"> {{exp.institution}} </span> <br>
+        <span style="padding-left: 158px"> {{exp.title}}</span>
+      </div>
+    </tr>
+  </mat-sidenav-content>
+  `
+</mat-sidenav-container>
+
+<div>
+  <img src="./assets/error.jpg">
+</div>

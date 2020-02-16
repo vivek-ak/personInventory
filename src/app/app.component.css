@@ -1,0 +1,61 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+.tp-container {
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fdfdfe;
+  overflow: visible ;
+
+}
+.person-button-view {
+  height: 40px;
+  font-size: 15px;
+  font-family: "Arial", fantasy;
+  color: #019adc;
+  margin: 0 10px 10px 10px;
+  width: 249px;
+  text-align: start;
+}
+
+
+button:hover {
+  background-color: #019adc;
+  color: #fdfdfe;
+}
+
+.button-selected {
+  border: 4px solid #019adc;
+}
+
+.side-view {
+  background-color: #eee;
+  flood-opacity: 0.5;
+  width: 280px;
+}
+
+.image-view {
+  height: 15px;
+}
+
+.content-view {
+  font-size: 20px;
+  display: inline-block;
+  width: 125px;
+  text-align: end;
+}
+
+.content-heading {
+  padding-left: 18px;
+  font-family: 'Arial Black'
+}
+
+.content-view-details {
+  padding-left:100px ;
+  width: 450px;
+}
+
+
+
